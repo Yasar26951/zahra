@@ -1,0 +1,1 @@
+{ "dmodel": 384, "dff": 64, "n_head": 6, "n_layer": 6, "f_dff": 1536, "max_seq": 256, "droprate": 0.1 }

@@ -1,17 +1,22 @@
 import model as m
 import tiktoken
 import torch
+import json 
+fi=open("config.json",'r')
+
+js=json.load(fi)
 tokenizer=tiktoken.get_encoding("gpt2" )
+
 vocab_size=tokenizer.n_vocab
 model = m.GPR(
-    dmodel=384,
-    dff=64,          # head dim
-    n_head=6,
-    n_layer=6,
-    f_dff=1536,
-    max_seq=256,
+    dmodel=js["dmodel"],
+    dff=js["dff"],          # head dim
+    n_head=js["n_head"],
+    n_layer=js["n_layer"],
+    f_dff=js["f_dff"],
+    max_seq=js["max_seq"],
     vocab_size=vocab_size,
-    droprate=0.1
+    droprate=js["droprate"]
 )
 
 state_dict = torch.load(
