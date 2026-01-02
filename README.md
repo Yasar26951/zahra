@@ -4,19 +4,7 @@
 This repository contains experiments with a custom Transformer-based language model.  
 The goal is to explore model training, evaluation, and inference quality using a lightweight architecture.
 
-## Model Configuration
-The model was trained with the following hyperparameters:
 
-```json
-{
-  "dmodel": 384,
-  "dff": 64,
-  "n_head": 6,
-  "n_layer": 6,
-  "f_dff": 1536,
-  "max_seq": 256,
-  "droprate": 0.1
-}
 
 Training & Evaluation
 Training was conducted on a custom dataset with tokenized text sequences.
@@ -42,13 +30,19 @@ Clone the repo:
 ```bash
 git clone https://github.com/Yasar26951/zahra.git
 cd zahra
-Install dependencies:
-
-```bash
 pip install -r requirements.txt
-Run training:
-
-
-
-bash
 python infer.py --prompt "Your text here"
+## Model Configuration
+The model was trained with the following hyperparameters:
+---
+```json
+{
+  "dmodel": 384,
+  "dff": 64,
+  "n_head": 6,
+  "n_layer": 6,
+  "f_dff": 1536,
+  "max_seq": 256,
+  "droprate": 0.1
+}```
+---
