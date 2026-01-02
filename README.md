@@ -4,16 +4,27 @@
 This repository contains experiments with a custom Transformer-based language model.  
 The goal is to explore model training, evaluation, and inference quality using a lightweight architecture.
 
+## Model Configuration
+The model was trained with the following hyperparameters:
+---
+```json
+{
+  "dmodel": 384,
+  "dff": 64,
+  "n_head": 6,
+  "n_layer": 6,
+  "f_dff": 1536,
+  "max_seq": 256,
+  "droprate": 0.1
+}
+```
 
-
-Training & Evaluation
+## Training & Evaluation
 Training was conducted on a custom dataset with tokenized text sequences.
 
 Evaluation metric: Perplexity
 
-Current model perplexity: 12,498.951 (very high, indicating poor predictive performance).
-
-High perplexity suggests issues with dataset quality, model capacity, or training stability.
+Current model perplexity: 157.951 .
 
 Inference Results
 Example inference output shows grammatically valid but semantically incoherent text:
@@ -31,18 +42,7 @@ Clone the repo:
 git clone https://github.com/Yasar26951/zahra.git
 cd zahra
 pip install -r requirements.txt
-python infer.py --prompt "Your text here"
-## Model Configuration
-The model was trained with the following hyperparameters:
----
-```json
-{
-  "dmodel": 384,
-  "dff": 64,
-  "n_head": 6,
-  "n_layer": 6,
-  "f_dff": 1536,
-  "max_seq": 256,
-  "droprate": 0.1
-}```
+python inference.py --prompt "Your text here"
+```
+
 ---
